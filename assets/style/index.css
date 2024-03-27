@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+:root {
+    --background: rgb(24, 24, 25);
+    --font-color: rgb(255, 255, 255);
+    --header-height: 54px;
+}
+
+.container {
+    width: min(100% - 40px, 1080px);
+    margin-inline: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--font-color);
+}
+
+/*Header*/
+
+header {
+    background-color: #1F2229;
+    height: var(--header-height);
+    display: flex;
+    position: relative;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.name h1 {
+    color: #3E9DFF;
+    line-height: var(--header-height);
+    font-size: 22px;
+    font-weight: 500;
+    width: 120px;
+    text-align: left;
+}
+
+ul {
+    line-height: var(--header-height);
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+}
+
+ul li {
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+ul li:hover {
+    color: #3E9DFF;
+}
+
+.pfp {
+    display: flex;
+    justify-content: right;
+    width: 120px;
+    line-height: var(--header-height);
+    padding: 8px 0;
+}
+
+.pfp img {
+    background-color: rgb(91, 91, 92);
+    border-radius: 50%;
+    border: 1px solid rgba(158, 158, 158, 0.406);
+    cursor: pointer;
+}
+
+.info {
+    height: 300px;
+    width: 200px;
+    background-color: rgb(54, 54, 56);
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    visibility: hidden;
+}
+
+/*Main*/
+
+textarea {
+    background-color: #1F2229;
+    resize: none;
+    width: 100%;
+    height: 220px;
+    border-radius: 6px;
+    direction: ltr;
+    text-align: left;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.feed {
+    width: 620px;
+    height: 100dvh;
+}
+
+section {
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.textarea-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: -52px;
+}
+
+.img-input {
+    width: 50%;
+    background-color: rgba(0, 0, 255, 0.248);
+    display: flex;
+    justify-content: right;
+}
+
+.button {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+.button button {
+    background-color: #2993FF;
+    color: #fff;
+    padding: 7px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+
+.button button:hover {
+    background-color: #1277dd;
+}
