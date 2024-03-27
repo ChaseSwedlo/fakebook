@@ -67,6 +67,7 @@ let postContent = '';
 let post = '';
 let imageDataUrl = '';
 let pfp = `<img src='./assets/media/pfp1.png' alt="pfp">`;
+
 function buildPost() {
     let name = `<h3>${subscriber.name}</h3>`;
     const options = { month: 'short', day: '2-digit', year: 'numeric' };
@@ -74,22 +75,17 @@ function buildPost() {
     let dateHTML = `<p>${date}</p>`;
     postTitle = `<div class="post-title"><div class="post-pfp">${pfp}${name}</div>${dateHTML}</div>`;
     let text = textarea.value.trim();
-    if(text !== '' && imageDataUrl === '') {
+    if (text !== '') {
         postContent = `<p>${text}</p>`;
-    }
-    else if(text !== '' && imageDataUrl !== '') {
-        postContent = `<p>${text}</p><img src="${imageDataUrl}" alt="img">`;
-    }
-    else if(text === '' && imageDataUrl !== '') {
+        if (imageDataUrl !== '') {
+            postContent += `<img src="${imageDataUrl}" alt="img">`;
+        }
+    } else if (imageDataUrl !== '') {
         postContent = `<img src="${imageDataUrl}" alt="img">`;
-    }
-    else {
+    } else {
         postContent = ``;
     }
-    if(postContent !== '')
-        post = `<div class="post">${postTitle}${postContent}</p>`;
-    else 
-        post = '';
+    post = postContent !== '' ? `<div class="post">${postTitle}${postContent}</div>` : '';
 }
 
 function clear() {
@@ -99,7 +95,7 @@ function clear() {
     imageDataUrl = '';
     textarea.value = '';
     fileName.innerText = '';
-    
+    fileInput.value = '';
 }
 
 postButton.addEventListener('click', () => {
