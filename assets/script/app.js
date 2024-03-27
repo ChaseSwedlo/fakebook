@@ -54,12 +54,18 @@ function setInfo() {
     groupOne.innerText = info.Groups[0];
     groupTwo.innerText = info.Groups[1];
     groupThree.innerText = info.Groups[2];
-
 }
 setInfo();
 
 infoButton.addEventListener('click', () => {
     infoDiv.classList.toggle('hidden');
+});
+
+document.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target !== infoButton && !infoDiv.contains(target)) {
+        infoDiv.classList.add('hidden');
+    }
 });
 
 let postTitle = '';
@@ -76,12 +82,12 @@ function buildPost() {
     postTitle = `<div class="post-title"><div class="post-pfp">${pfp}${name}</div>${dateHTML}</div>`;
     let text = textarea.value.trim();
     if (text !== '') {
-        postContent = `<p>${text}</p>`;
+        postContent = `<p class="post-text">${text}</p>`;
         if (imageDataUrl !== '') {
-            postContent += `<img src="${imageDataUrl}" alt="img">`;
+            postContent += `<img class="post-img" src="${imageDataUrl}" alt="img">`;
         }
     } else if (imageDataUrl !== '') {
-        postContent = `<img src="${imageDataUrl}" alt="img">`;
+        postContent = `<img class="post-img" src="${imageDataUrl}" alt="img">`;
     } else {
         postContent = ``;
     }
