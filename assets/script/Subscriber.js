@@ -18,37 +18,37 @@ class User {
     get email() { return this.#email; }
 
     getInfo() {
-        return (
-            `ID: ${this.id}, 
-            Name: ${this.name}, 
-            UserName: ${this.userName}, 
-            Email: ${this.email}`
-        );
+        return {
+            ID: this.id,
+            Name: this.name,
+            UserName: this.userName,
+            Email: this.email
+        };
     }
 }
 
 class Subscriber extends User {
     #pages;
     #groups;
-    #canMonitize;
+    #canMonetize;
     constructor(id, name, userName, email, pages, groups, canMonitize) {
         super(id, name, userName, email);
         this.#pages = pages;
         this.#groups = groups;
-        this.#canMonitize = canMonitize;
+        this.#canMonetize = canMonitize;
     }
 
-    get pages() { return this.pages; }
-    get groups() { return this.groups; }
-    get canMonitize() { return this.canMonitize; }
+    get pages() { return this.#pages; }
+    get groups() { return this.#groups; }
+    get canMonetize() { return this.#canMonetize; }
 
     getInfo() {
-        return (
-            `, ${super.getInfo()}, 
-            Pages: ${this.pages}, 
-            Groups: ${this.groups}, 
-            Monitization: ${this.canMonitize}`
-        );
+        return {
+            ...super.getInfo(),
+            Pages: this.pages,
+            Groups: this.groups,
+            Monetization: this.canMonetize
+        };
     }
 }
 

@@ -7,20 +7,60 @@ const postButton = document.querySelector('.post-button');
 const fileInput = document.getElementById('file-input');
 const fileInputLabel = document.querySelector('.file-label');
 const fileName = document.querySelector('.file-name');
+const fullName = document.querySelector('.fname');
+const userName = document.querySelector('.user');
+const userId = document.querySelector('.id');
+const email = document.querySelector('.email');
+const infoButton = document.querySelector('.pfp-button');
+const infoDiv = document.querySelector('.info');
+const monetize = document.querySelector('.monetize');
+const pageOne = document.querySelector('.p-one');
+const pageTwo = document.querySelector('.p-two');
+const pageThree = document.querySelector('.p-three');
+const groupOne = document.querySelector('.g-one');
+const groupTwo = document.querySelector('.g-two');
+const groupThree = document.querySelector('.g-three');
 let subscriber = createUser();
-
 
 function createUser() {
     return new Subscriber(
-        3928,
-        'Chase Swedlo',
-        '@cswed',
-        'chaseswedlo@outlook.com',
-        ['Page1', 'Page2', 'Page3'],
-        ['Music', 'Java', 'Movies'],
+        3928, 
+        'Chase Swedlo', 
+        '@cswed', 
+        'chaseswedlo@outlook.com', 
+        ['Profile', 'Settings', 'Explore'], 
+        ['Music', 'Java', 'Movies'], 
         true
     );
 }
+
+function setInfo() {
+    let info = subscriber.getInfo();
+    fullName.innerText = info.Name;
+    userName.innerText = info.UserName;
+    userId.innerText = info.ID;
+    email.innerText = info.Email;
+    if(info.Monetization) {
+        monetize.innerText = 'Monetization Avalible';
+        monetize.style.backgroundColor = 'rgba(30, 255, 0, 0.11)';
+    }
+    else {
+        monetize.innerText = 'Monetization Unavalible';
+        monetize.style.backgroundColor = 'rgba(255, 31, 0, 0.11)';
+    }
+    pageOne.innerText = info.Pages[0];
+    pageTwo.innerText = info.Pages[1];
+    pageThree.innerText = info.Pages[2];
+    groupOne.innerText = info.Groups[0];
+    groupTwo.innerText = info.Groups[1];
+    groupThree.innerText = info.Groups[2];
+
+}
+setInfo();
+
+infoButton.addEventListener('click', () => {
+    infoDiv.classList.toggle('hidden');
+});
 
 let postTitle = '';
 let postContent = '';

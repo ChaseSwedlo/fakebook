@@ -4,6 +4,7 @@
     --background: rgb(24, 24, 25);
     --font-color: rgb(255, 255, 255);
     --header-height: 54px;
+    --info-p-border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .container {
@@ -84,15 +85,65 @@ ul li:hover {
 }
 
 .info {
-    height: 300px;
-    width: 200px;
+    width: 300px;
     background-color: rgb(54, 54, 56);
     position: absolute;
     top: var(--header-height);
     right: 0;
     border-radius: 6px;
-    padding: 15px;
+    padding-top: 15px;
     text-align: center;
+    display: block;
+}
+
+.fname {
+    padding-top: 5px;
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.uname {
+    font-size: 14px;
+    line-height: 1;
+    opacity: .5;
+    margin-top: 4px;
+}
+
+.emailp {
+    padding: 10px 0;
+    background-color: rgba(231, 231, 231, 0.027);
+    border-top: var(--info-p-border);
+    border-bottom: var(--info-p-border);
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.monetize {
+    border-bottom: var(--info-p-border);
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.pages, .groups {
+    border-bottom: var(--info-p-border);
+    font-size: 15px;
+    padding: 10px 0;
+    background-color: rgba(231, 231, 231, 0.027);
+}
+
+.cc {
+    font-size: 12px;
+    padding: 5px 0;
+    opacity: 0.3;
+}
+
+.shown {
+    visibility: visible;
+}
+
+.hidden {
     visibility: hidden;
 }
 
