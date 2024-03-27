@@ -24,6 +24,10 @@ body {
     color: var(--font-color);
 }
 
+.flex {
+    display: flex;
+}
+
 /*Header*/
 
 header {
@@ -105,12 +109,10 @@ textarea {
     color: #fff;
     padding: 15px 20px;
     font-size: 16px;
-    margin: 0;
 }
 
 .feed {
     width: 620px;
-    height: 100dvh;
 }
 
 section {
@@ -126,13 +128,19 @@ section {
     justify-content: space-between;
     padding: 0 12px;
     margin-top: -52px;
+    margin-bottom: 52px;
 }
 
 .img-input {
+    padding-top: 10px;
     width: 50%;
-    background-color: rgba(0, 0, 255, 0.248);
-    display: flex;
-    justify-content: right;
+}
+
+.img-input p {
+    padding-left: 10px;
+    line-height: 32px;
+    color: #ffffffad;
+    font-size: 14px;
 }
 
 .button {
@@ -144,7 +152,8 @@ section {
 .button button {
     background-color: #2993FF;
     color: #fff;
-    padding: 7px 16px;
+    height: 36px;
+    padding: 0 16px;
     font-size: 14px;
     border-radius: 6px;
     transition-duration: 0.2s;
@@ -152,4 +161,66 @@ section {
 
 .button button:hover {
     background-color: #1277dd;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    font-size: 22px;
+    text-align: left;
+    color: #ffffffad;
+}
+
+/*Posts*/
+.post-feed {
+    width: 100%;
+}
+
+.post {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    color: black;
+    padding: 15px;
+}
+
+.post-pfp img {
+    height: 40px;
+    background-color: rgb(91, 91, 92);
+    border-radius: 50%;
+    border: 1px solid rgba(158, 158, 158, 0.406);
+}
+
+.post-pfp {
+    display: flex;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.post-title {
+    justify-content: space-between;
+    padding-bottom: 7px;
+    display: flex;
+}
+
+.post-title p {
+    line-height: 40px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.538)
+}
+
+.post-pfp h3 {
+    padding-left: 10px;
+}
+
+.post-pfp p {
+    text-align: right;
+    background-color: red;
+}
+
+.post + .post {
+    margin-top: 15px;
 }

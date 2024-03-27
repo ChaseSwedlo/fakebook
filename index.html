@@ -45,17 +45,20 @@
             <div class="container">
                 <section>
                     <div class="feed">
-                        <textarea placeholder="Whats new?"></textarea>
+                        <textarea class="text-area" placeholder="What's new?"></textarea>
                         <div class="textarea-buttons">
-                            <div class="img-input">
-                                <i class="fa-regular fa-image">
-                                    <input type="file" class="fileInput" accept="image/*">
-                                </i>
+                            <div class="img-input flex">
+                                <label for="fileInput" class="file-label">
+                                    <i class="fa-regular fa-image"></i>
+                                </label>
+                                <input type="file" id="file-input" accept="image/*">
+                                <p class="file-name"></p>
                             </div>
                             <div class="button">
-                                <button>Post</button>
+                                <button class="post-button">Post</button>
                             </div>
                         </div>
+                        <div class="post-feed"></div>
                     </div>
                 </section>
             </div>
