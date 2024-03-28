@@ -86,7 +86,7 @@ ul li:hover {
 /*Drop down info box*/
 .info {
     width: 300px;
-    background-color: rgb(54, 54, 56);
+    background-color: rgb(37, 37, 43);
     position: absolute;
     top: var(--header-height);
     right: 0;
@@ -121,9 +121,12 @@ ul li:hover {
 }
 
 .monetize {
-    border-bottom: var(--info-p-border);
     font-size: 15px;
     padding: 10px 0;
+}
+
+.pages {
+    border-top: var(--info-p-border);
 }
 
 .pages, .groups {
@@ -186,7 +189,6 @@ section {
 
 .img-input {
     padding-top: 10px;
-    width: 50%;
 }
 
 .img-input p {
@@ -200,7 +202,6 @@ section {
 }
 
 .button {
-    width: 50%;
     display: flex;
     justify-content: right;
 }
@@ -219,6 +220,10 @@ section {
     background-color: rgb(18, 119, 221);
 }
 
+.button button:active {
+    background-color: rgb(12, 92, 172);
+}
+
 input[type="file"] {
     display: none;
 }
@@ -228,6 +233,15 @@ label {
     font-size: 22px;
     text-align: left;
     color: rgba(255, 255, 255, 0.678);
+    transition-duration: 0.2s;
+}
+
+label:hover {
+    color: rgba(255, 255, 255, 0.527);
+}
+
+label:active {
+    color: rgba(255, 255, 255, 0.349);
 }
 
 /*Posts*/
@@ -283,4 +297,8 @@ label {
 .post-img {
     border-radius: 6px;
     margin-top: 8px;
+}
+
+footer  {
+    height: 52px;
 }
